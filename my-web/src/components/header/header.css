@@ -1,96 +1,121 @@
 .header {
-    width: 100%;
-    height: 70px;
-    line-height: 70px;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: fixed;
+  background-color: #fff;
+  z-index: 20;
+  margin-bottom: 30px;
 }
 
 .nav__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
 }
 
 .logo img {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .logo h1 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .menu {
-    display: flex;
-    align-items: center;
-    column-gap: 2.7rem;
-    margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 2.7rem;
+  margin-bottom: 0;
 }
 
 .nav__item a {
-    color: var(--primary-color);
-    font-weight: 500;
-    cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .nav__icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.2rem;
 }
 
 .fav__icon,
 .cart__icon {
-    position: relative;
+  position: relative;
 }
 
 .badge {
-    position: absolute;
-    top: 25%;
-    right: -8%;
-    width: 15px;
-    height: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    content: "";
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    z-index: 10;
-    transform: translateX(-10%);
+  position: absolute;
+  top: 25%;
+  right: -8%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "";
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 10;
+  transform: translateX(-10%);
 }
 
 .nav__icons span i {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .nav__icons span img {
-    position: relative;
-    height: 30px;
-    width: 30px;
-    top: -3px;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  top: -3px;
 }
 
 .mobile__menu {
-    display: none;
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    cursor: pointer;
+  display: none;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .nav__active {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
+}
+
+@media screen and(max-width:768px) {
+  .navigation {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.53);
+    z-index: 999;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    flex-direction: column;
+  }
 }

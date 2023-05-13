@@ -4,6 +4,7 @@
     box-shadow: 0px 2px 5px #cac1c1cf, 0px 4px 5px #cac1c1cf;
     padding: 10px 10px 20px 10px;
     overflow: hidden;
+    /* height: 400px; */
 }
 
 .product__img img {
@@ -35,6 +36,7 @@
     color: var(--primary-color);
     font-size: 1.3rem;
     font-weight: 500;
+    margin-left: 3px;
 }
 
 .product__card-bottom {

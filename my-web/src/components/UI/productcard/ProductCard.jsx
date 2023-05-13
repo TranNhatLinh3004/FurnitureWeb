@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 function ProductCard(props) {
   return (
-    <Col lg="3">
+    <Col lg="3" md="4" className="mb-2">
       <div className="product__item">
         <div className="product__img">
           <motion.img
@@ -17,7 +17,7 @@ function ProductCard(props) {
         </div>
         <div className="p-2">
           <h3 className="product__name">
-            <Link to="/shop/id">{props.item.productName}</Link>
+            <Link to="/shop/${props.item.id">{props.item.productName}</Link>
           </h3>
           <span className="text-center">{props.item.category}</span>
         </div>
