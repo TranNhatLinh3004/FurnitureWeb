@@ -65,7 +65,7 @@ function ProductDetails(props) {
   return (
     <Helmet title={productName}>
       <CommonSection title={productName} />
-      <section className="pt-0">
+      <section className="pt-0" style={{ top: "-10px" }}>
         <Container>
           <Row>
             <Col lg="6">
@@ -112,7 +112,7 @@ function ProductDetails(props) {
         </Container>
       </section>
 
-      <section>
+      <section className="desc__reviews">
         <Container>
           <Row>
             <Col lg="12">
@@ -232,7 +232,7 @@ function ProductDetails(props) {
               >
                 You might also like
               </h2>
-              <Row className="mt-4">
+              <Row className="mt-4 list__products">
                 <ProductsList data={relatedProducts}></ProductsList>
               </Row>
             </Col>

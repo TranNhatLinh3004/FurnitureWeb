@@ -48,7 +48,7 @@ function Shop(props) {
     <Helmet title="Shop">
       <CommonSection title="Products"></CommonSection>
 
-      <section>
+      <section className="pt-0" style={{ top: "0px" }}>
         <Container>
           <Row>
             <Col lg="3" md="3">
@@ -84,7 +84,7 @@ function Shop(props) {
           </Row>
         </Container>
       </section>
-      <section className="pt-0" style={{ top: "-70px" }}>
+      <section className="pt-0" style={{ top: "120px" }}>
         <Container>
           <Row>
             {productsData.length === 0 ? (

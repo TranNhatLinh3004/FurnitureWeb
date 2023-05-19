@@ -52,6 +52,8 @@
 }
 
 .timer__count {
+  position: relative;
+  top: -230px;
   /* background-color: rgb(71, 152, 147); */
   background: linear-gradient(to bottom right, #f42f8a, #159245);
   height: 300px;
@@ -61,4 +63,18 @@
   width: 70% !important;
   height: 70% !important;
   object-fit: contain;
+}
+
+.section__title {
+  position: relative;
+  top: -230px;
+  color: #0f5c36;
+  text-shadow: 2px 2px 5px #159245, 3px 4px 5px #159245;
+}
+
+.best__sales {
+  position: relative;
+  top: -80px;
+  /* background-color: #f42f8a; */
+  height: 650px;
 }

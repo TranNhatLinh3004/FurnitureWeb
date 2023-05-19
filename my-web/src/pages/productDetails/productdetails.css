@@ -87,3 +87,15 @@ img {
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+.list__products {
+  position: relative;
+  /* background-color: crimson; */
+  /* height: 250px; */
+  top: 220px;
+}
+
+.desc__reviews {
+  position: relative;
+  top: -150px;
+}

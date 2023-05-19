@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function Cart(props) {
   const cartItems = useSelector((state) => state.cart.cartItem);
-  const totalAmount = useSelector(state => state.cart.totalAmount);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   /**
    * 
@@ -22,7 +22,7 @@ function Cart(props) {
   return (
     <Helmet title="Cart">
       <CommonSection title="Shopping Cart" />
-      <section>
+      <section className="pt-0" style={{ top: "10px" }}>
         <Container>
           <Row>
             <Col lg="9">
@@ -40,48 +40,42 @@ function Cart(props) {
                     </tr>
                   </thead>
                   <tbody>
-                   {
-                    cartItems.map((
-                      item,index
-                    ) => 
-                   (<Tr item={item} key={index}></Tr>))
-                   }
+                    {cartItems.map((item, index) => (
+                      <Tr item={item} key={index}></Tr>
+                    ))}
                   </tbody>
                 </table>
               )}
             </Col>
 
-            <Col lg="3">
-            <div>
-              <h4 className="d-flex align-items-center">Subtotal</h4>
-              <span>${totalAmount}</span>
-            </div>
+            <Col lg="3" className="pt-2">
+              <div>
+                <h3
+                  className="d-flex align-items-center"
+                  style={{ fontSize: "25px" }}
+                >
+                  Subtotal
+                </h3>
+                <span>${totalAmount}</span>
+              </div>
               <p>shipping will calculate in checkout</p>
-           <Row>
-       <Col>
-       <div  >
-                <button className="buy__btn lg-7">
-                  <Link to="/shop">
-                Shopping
-                  </Link>
-                </button>
-              
-              </div>
-       </Col>
+              <Row>
+                <Col>
+                  <div>
+                    <button className="buy__btn lg-7">
+                      <Link to="/shop">Shopping</Link>
+                    </button>
+                  </div>
+                </Col>
 
-       <Col>
-       
-       <div>
-              <button className="buy__btn">
-                  <Link to="/checkout">
-                  Checkout
-                  </Link>
-                </button>
-              </div>
-       </Col>
-           
-           </Row>
-            
+                <Col>
+                  <div>
+                    <button className="buy__btn">
+                      <Link to="/checkout">Checkout</Link>
+                    </button>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
@@ -89,24 +83,24 @@ function Cart(props) {
     </Helmet>
   );
 }
-const Tr = ({item}) => {
+const Tr = ({ item }) => {
   const dispatch = useDispatch();
-  const deleteProduct = () =>{
+  const deleteProduct = () => {
     dispatch(cartActives.deleteItem(item.id));
-  }
+  };
   return (
     <tr>
-    <td>
-      <img src={item.imgUrl} />
-    </td>
-    <td>{item.productName}</td>
-    <td>${item.price}</td>
-    <td>{item.quantity} px</td>
-    <td onClick={deleteProduct}>
-      <i class="ri-delete-bin-line"></i>
-    </td>
-  </tr>
+      <td>
+        <img src={item.imgUrl} />
+      </td>
+      <td>{item.productName}</td>
+      <td>${item.price}</td>
+      <td>{item.quantity} px</td>
+      <td onClick={deleteProduct}>
+        <i class="ri-delete-bin-line"></i>
+      </td>
+    </tr>
   );
-}
+};
 
 export default Cart;
