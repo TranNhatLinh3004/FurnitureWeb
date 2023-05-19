@@ -1,0 +1,25 @@
+.common__section {
+  background-image: url("https://images.pexels.com/photos/7535059/pexels-photo-7535059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  height: 300px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px;
+}
+
+.common__section h1 {
+  margin-top: 50px;
+  color: #fbfbfb;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px black;
+}
+
+@media only screen and (max-width: 768) {
+  .common__section {
+    padding: 70px 0px;
+  }
+  .common__section h1 {
+    font-size: 1.4rem;
+  }
+}

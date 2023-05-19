@@ -45,6 +45,8 @@
 }
 
 .nav__icons {
+  position: relative;
+  right: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,11 +83,38 @@
   cursor: pointer;
 }
 
-.nav__icons span img {
+.nav__icons .profile img {
   position: relative;
   height: 30px;
   width: 30px;
   top: -3px;
+  border-radius: 50%;
+}
+
+.profile .profile__actions {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  width: 150px;
+  height: 60px;
+  right: -150px;
+  top: 7%;
+  /* background-color: rgb(132, 177, 255); */
+  line-height: 30px;
+  cursor: pointer;
+  /* display: none; */
+}
+
+.show__profileActions {
+  display: block;
+}
+
+.nav__icons .profile {
+  position: relative;
+  z-index: 9;
 }
 
 .mobile__menu {

@@ -8,24 +8,33 @@ import { Link } from "react-router-dom";
 import Services from "../../components/services/Services.jsx";
 import products from "../../assets/data/products";
 import ProductsList from "../../components/UI/productslist/ProductsList";
+
+import countImage from "../../assets/images/counter-timer-img.png";
+import Clock from "../../components/UI/clock/Clock";
 function Home(props) {
-  const [data, setData] = useState(products);
+  const [trendingProducts, setTrendingProducts] = useState([]);
+  const [bestSalesProducts, setBestSalesProducts] = useState([]);
+
   const year = new Date().getFullYear();
   useEffect(() => {
     const filteredProducts = products.filter(
       (item) => item.category === "chair"
     );
 
-    setData(filteredProducts);
+    const filteredBestSalesProducts = products.filter(
+      (item) => item.category === "sofa"
+    );
+    setBestSalesProducts(filteredBestSalesProducts);
+    setTrendingProducts(filteredProducts);
   }, []);
   return (
     <Helmet title={"Home"}>
-      <section className="hero__section">
+      <section className="hero__section" id="home">
         <Container>
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content">
-                <p className="hero__content">Trending product in {year}</p>
+                <p className="">Trending product in {year}</p>
                 <h2>Make Your Interior More Minimalistic % Modern</h2>
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -47,16 +56,49 @@ function Home(props) {
         </Container>
       </section>
       <Services></Services>
-      <div className="trending__products">
+
+      <section className="trending__products">
         <Container>
           <Row>
             <Col lg="12" className="text-center">
               <h2 className="section__title">Trending Products</h2>
             </Col>
-            <ProductsList data={data} />
+            <ProductsList data={trendingProducts} />
           </Row>
         </Container>
-      </div>
+      </section>
+
+      <section className="timer__count">
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="clock__top__content">
+                <h4 className="text-white fs-6 mb-2">Limited Offers</h4>
+                <h3 className="text-white fs-5 mb-3">Quality Armchair</h3>
+              </div>
+              <Clock />
+              <button className="buy__btn store__btn">
+                <Link to="/shop">Visit Store</Link>
+              </button>
+              {/* <img src={countImage} alt="" /> */}
+            </Col>
+            <Col lg="6" md="6" className="text-end">
+              <img src={countImage} alt="" />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="best__sales">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2 className="section__title">Best Sales</h2>
+            </Col>
+            <ProductsList data={bestSalesProducts} />
+          </Row>
+        </Container>
+      </section>
     </Helmet>
   );
 }

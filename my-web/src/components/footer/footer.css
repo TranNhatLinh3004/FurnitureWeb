@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgb(39, 37, 37);
+  background-color: #0a1d37;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 -0.5px 1px white;
 }
@@ -36,7 +36,7 @@
 }
 
 .footer__social-link {
-  background-color: rgb(4, 113, 26);
+  background-color: rgb(34, 79, 86);
   padding: 0.4rem;
   border-radius: 0.5rem;
   display: inline-flex;

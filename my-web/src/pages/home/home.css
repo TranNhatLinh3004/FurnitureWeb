@@ -1,48 +1,64 @@
 .hero__section {
-    background-color: var(--hero-bg);
-    /* filter: hue-rotate(230deg); */
-    /* Đổi màu sang màu xanh lá cây */
-}
-
-.hero__section h2 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin: 20px 0px;
-}
-
-.hero__section p:nth-child(1) {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.hero__section p {
-    color: var(--primary-color);
-    line-height: 28px;
-}
-
-.buy__btn {
-    border: none;
-    outline: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 40px;
-    box-shadow: 1px 3px 3px #444;
-}
-
-.buy__btn:hover {
-    transform: translateY(3px);
-    box-shadow: 0px 0px 0px #444;
-}
-
-.buy__btn:hover a {
-    color: #fff;
+  background-color: var(--hero-bg);
+  /* filter: hue-rotate(230deg); */
+  /* Đổi màu sang màu xanh lá cây */
 }
 
 .hero__content {
-    padding-top: 15px;
+  margin-top: 50px;
+}
+
+.hero__section h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.hero__section p:nth-child(1) {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.hero__section p {
+  color: var(--primary-color);
+  line-height: 28px;
+}
+
+.buy__btn {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 40px;
+  box-shadow: 1px 3px 3px #444;
+}
+
+.buy__btn:hover {
+  transform: translateY(3px);
+  box-shadow: 0px 0px 0px #444;
+}
+
+.buy__btn:hover a {
+  color: #fff;
+}
+
+.hero__content {
+  padding-top: 15px;
+}
+
+.timer__count {
+  /* background-color: rgb(71, 152, 147); */
+  background: linear-gradient(to bottom right, #f42f8a, #159245);
+  height: 300px;
+}
+
+.timer__count img {
+  width: 70% !important;
+  height: 70% !important;
+  object-fit: contain;
 }

@@ -1,0 +1,18 @@
+section {
+  position: relative;
+  top: 40px;
+  margin-bottom: 100px;
+}
+
+.auth__form {
+  background: var(--primary-color);
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.auth__btn {
+  background: #fff;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
