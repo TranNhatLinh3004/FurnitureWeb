@@ -53,9 +53,15 @@ function Login(props) {
               </Col>
             ) : (
               <Col lg="6" className="m-auto text-center">
-                <h3 className="fw-bold fs-4">Login</h3>
-
                 <Form className="auth__form" onSubmit={signIn}>
+                  <h3
+                    className="fw-bold fs-4
+                 mb-4
+                "
+                  >
+                    Login
+                  </h3>
+
                   <FormGroup className="form__group">
                     <input
                       type="email"

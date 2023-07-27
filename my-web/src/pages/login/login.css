@@ -5,9 +5,20 @@ section {
 }
 
 .auth__form {
-  background: var(--primary-color);
+  background-image: url("https://images.pexels.com/photos/5501624/pexels-photo-5501624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   padding: 40px;
   border-radius: 5px;
+  background-size: cover;
+}
+
+.auth__form h3,
+.auth__form p {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.auth__form p {
+  color: #fff;
 }
 
 .auth__btn {

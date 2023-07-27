@@ -11,6 +11,7 @@ import ProductsList from "../../components/UI/productslist/ProductsList";
 
 import countImage from "../../assets/images/counter-timer-img.png";
 import Clock from "../../components/UI/clock/Clock";
+import handleScroll from "../../feature/handleScroll";
 function Home(props) {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
@@ -27,13 +28,26 @@ function Home(props) {
     setBestSalesProducts(filteredBestSalesProducts);
     setTrendingProducts(filteredProducts);
   }, []);
+
+  let height = document.body.scrollHeight;
+  const [scrollY, setHeight] = useState(height);
+  window.addEventListener("scroll", () => {
+    setHeight(document.body.scrollHeight);
+  });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    handleScroll();
+
+    // document.header.className = icon;
+  }, [scrollY]);
   return (
     <Helmet title={"Home"}>
       <section className="hero__section" id="home">
         <Container>
           <Row>
             <Col lg="6" md="6">
-              <div className="hero__content">
+              <div className="hero__content  hidden">
                 <p className="">Trending product in {year}</p>
                 <h2>Make Your Interior More Minimalistic % Modern</h2>
                 <p>
@@ -48,7 +62,7 @@ function Home(props) {
               </div>
             </Col>
             <Col lg="6" md="6">
-              <div className="hero__image">
+              <div className="hero__image hidden">
                 <img src={heroImg} alt="" />
               </div>
             </Col>
@@ -68,7 +82,7 @@ function Home(props) {
         </Container>
       </section>
 
-      <section className="timer__count">
+      <section className="timer__count hidden">
         <Container>
           <Row>
             <Col lg="6" md="6">
@@ -93,7 +107,7 @@ function Home(props) {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2 className="section__title">Best Sales</h2>
+              <h2 className="section__title">Best Selling</h2>
             </Col>
             <ProductsList data={bestSalesProducts} />
           </Row>

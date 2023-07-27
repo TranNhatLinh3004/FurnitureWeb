@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./productdetails.css";
 import products from "../../assets/data/products";
@@ -11,6 +11,9 @@ import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { cartActives } from "../../redux/slices/cartSlice";
 function ProductDetails(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [tab, setTab] = useState("desc");
   const [rating, setRating] = useState(null);
 
@@ -31,8 +34,23 @@ function ProductDetails(props) {
     shortDesc,
     reviews,
     category,
+    src,
   } = product;
   const relatedProducts = products.filter((item) => item.category === category);
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantityChange = (event) => {
+    const value = parseInt(event.target.value, 10);
+    setQuantity(isNaN(value) ? 1 : value);
+  };
+
+  const increaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  };
 
   const submitHandle = (e) => {
     e.preventDefault();
@@ -56,12 +74,27 @@ function ProductDetails(props) {
         productName,
         imgUrl,
         price,
+        quantity,
       })
     );
     toast.success("Item added to cart");
 
     // alert(props.item.id);
   };
+
+  const [currentImage, setCurrentImage] = useState(imgUrl);
+  const [activeThumbIndex, setActiveThumbIndex] = useState(0);
+
+  const handleThumbHover = (image, index) => {
+    setCurrentImage(image);
+    setActiveThumbIndex(index);
+  };
+
+  useEffect(() => {
+    setCurrentImage(imgUrl);
+
+    setActiveThumbIndex(0);
+  }, [id]);
   return (
     <Helmet title={productName}>
       <CommonSection title={productName} />
@@ -69,7 +102,7 @@ function ProductDetails(props) {
         <Container>
           <Row>
             <Col lg="6">
-              <img src={imgUrl} />
+              <img src={currentImage} />
             </Col>
             <Col lg="6">
               <div className="product__details">
@@ -103,12 +136,42 @@ function ProductDetails(props) {
                   </span>
                 </div>
                 <p className="mt-2">{shortDesc}</p>
+                {/*  */}
+                <div className="quantity-container">
+                  <button className="quantity-btn" onClick={decreaseQuantity}>
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    value={quantity}
+                    onChange={handleQuantityChange}
+                  />
+                  <button className="quantity-btn" onClick={increaseQuantity}>
+                    +
+                  </button>
+                </div>
+
+                {/*  */}
                 <button className="buy__btn" onClick={addToCart}>
                   Add to cart
                 </button>
               </div>
             </Col>
           </Row>
+          <div className="thumb">
+            {src.map((image, index) => {
+              return (
+                <img
+                  key={index}
+                  src={image}
+                  onMouseEnter={() => handleThumbHover(image, index)}
+                  className={`thumb ${
+                    index === activeThumbIndex ? "active" : ""
+                  }`}
+                />
+              );
+            })}
+          </div>
         </Container>
       </section>
 

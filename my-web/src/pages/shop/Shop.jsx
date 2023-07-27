@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from "../../components/helmet/Helmet";
 import CommonSection from "../../components/UI/commonsection/CommonSection";
 import { Col, Container, Row } from "reactstrap";
@@ -11,7 +11,9 @@ import ProductsList from "../../components/UI/productslist/ProductsList";
 function Shop(props) {
   const [productsData, setProductsData] = useState(products);
   const [search, setSearch] = useState("");
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleFilter = (e) => {
     let val = e.target.value;
     if (val === "sofa") {

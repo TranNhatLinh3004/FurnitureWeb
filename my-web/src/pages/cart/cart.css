@@ -1,20 +1,27 @@
 .table tr td {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.cart__total {
+  color: var(--primary-color) !important;
+  font-size: 25px !important;
+  font-weight: 600;
+  margin: 5px 0;
 }
 
 th,
 td {
-    color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 h2.text-center {
-    margin-left: 350px;
+  margin-left: 350px;
 }
 
 .table img {
-    position: relative;
-    width: 70px;
-    height: 70px;
+  position: relative;
+  width: 70px;
+  height: 70px;
 }

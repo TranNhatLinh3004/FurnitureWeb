@@ -3,6 +3,10 @@ import React from "react";
 import "./scrollup.css";
 
 function ScrollUp(props) {
+  const handleScrollUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   window.addEventListener("scroll", () => {
     const scrollUp = document.querySelector(".scrollup");
 
@@ -12,10 +16,11 @@ function ScrollUp(props) {
       scrollUp.classList.remove("show-scroll");
     }
   });
+
   return (
-    <a href="#home" className="scrollup">
+    <div className="scrollup" onClick={handleScrollUp}>
       <i className="uil uil-arrow-up scrollup__icon"></i>
-    </a>
+    </div>
   );
 }
 

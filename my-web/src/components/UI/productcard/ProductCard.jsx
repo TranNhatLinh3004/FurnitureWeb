@@ -11,6 +11,22 @@ import { cartActives } from "../../../redux/slices/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 function ProductCard(props) {
   const dispatch = useDispatch();
+  const getRandomPercentage = () => {
+    return Math.floor(Math.random() * 41) + 10; // Tạo số ngẫu nhiên từ 10 đến 50
+  };
+  function calculateOriginalPrice(salePrice, discountPercentage) {
+    // Chuyển tỷ lệ giảm giá từ phần trăm thành số thập phân
+    const discountDecimal = discountPercentage / 100;
+
+    // Tính giá gốc trước khi sale
+    const originalPrice = salePrice / (1 - discountDecimal);
+
+    // Làm tròn giá gốc về 2 chữ số thập phân (nếu cần)
+    const roundedOriginalPrice = Math.round(originalPrice * 100) / 100;
+
+    return roundedOriginalPrice;
+  }
+  const randomPercentage = getRandomPercentage();
   const addToCart = () => {
     dispatch(
       cartActives.addItem({
@@ -18,10 +34,10 @@ function ProductCard(props) {
         productName: props.item.productName,
         imgUrl: props.item.imgUrl,
         price: props.item.price,
+        quantity: 1,
       })
     );
     toast.success("Item added to cart");
-
   };
   return (
     <Col lg="3" md="4" className="mb-2">
@@ -32,6 +48,9 @@ function ProductCard(props) {
             src={props.item.imgUrl}
             alt="ẢNh LỖi"
           />
+          {props.item.onSale && (
+            <span className="onsale">Sale {randomPercentage}%</span>
+          )}
         </div>
         <div className="p-2">
           <h3 className="product__name">
@@ -40,8 +59,15 @@ function ProductCard(props) {
           <span className="text-center">{props.item.category}</span>
         </div>
 
-        <div className="product__card-bottom ">
-          <span className="price">${props.item.price}</span>
+        <div className="product__card-bottom">
+          <span className="price">
+            ${props.item.price}
+            {props.item.onSale && (
+              <strike>
+                {calculateOriginalPrice(props.item.price, randomPercentage)}$
+              </strike>
+            )}
+          </span>
           <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}>
             <i class="ri-add-line"></i>
           </motion.span>

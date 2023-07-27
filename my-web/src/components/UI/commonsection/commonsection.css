@@ -1,6 +1,6 @@
 .common__section {
   background-image: url("https://images.pexels.com/photos/7535059/pexels-photo-7535059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  height: 300px;
+  height: 200px;
   background-size: cover;
   display: flex;
   justify-content: center;

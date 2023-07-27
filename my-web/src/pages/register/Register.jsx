@@ -76,9 +76,9 @@ function Register(props) {
               </Col>
             ) : (
               <Col lg="6" className="m-auto text-center">
-                <h3 className="fw-bold fs-4">Register</h3>
-
                 <Form className="auth__form" onSubmit={register}>
+                  <h3 className="fw-bold fs-4 mb-4 ">Register</h3>
+
                   <FormGroup className="form__group">
                     <input
                       type="text"

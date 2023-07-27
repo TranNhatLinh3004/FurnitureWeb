@@ -4,11 +4,17 @@ import CommonSection from "../../components/UI/commonsection/CommonSection";
 import { Col, FormGroup, Form, Container, Row } from "reactstrap";
 import "./checkout.css";
 import { useSelector, useDispatch } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
 function Checkout(props) {
+  const navigate = useNavigate();
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const handleClick = (e) => {
+    e.preventDefault();
 
+    navigate("/thank-you");
+    // console.log(credentials);
+  };
   return (
     <Helmet title="Checkout">
       <CommonSection title="Checkout" />
@@ -23,11 +29,11 @@ function Checkout(props) {
                 </FormGroup>
 
                 <FormGroup>
-                  <input type="text" placeholder="Enter your email" />
+                  <input type="email" placeholder="Enter your email" />
                 </FormGroup>
 
                 <FormGroup>
-                  <input type="text" placeholder="Phone number" />
+                  <input type="number" placeholder="Phone number" />
                 </FormGroup>
 
                 <FormGroup>
@@ -62,7 +68,10 @@ function Checkout(props) {
                   Total Cost: <span>${totalAmount}</span>
                 </h4>
               </div>
-              <button className="buy__btn auth__btn w-100">
+              <button
+                className="buy__btn auth__btn w-100"
+                onClick={handleClick}
+              >
                 Place an order
               </button>
             </Col>

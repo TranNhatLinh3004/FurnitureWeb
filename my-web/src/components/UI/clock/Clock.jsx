@@ -9,7 +9,7 @@ function Clock(props) {
   let interval;
 
   const countDown = () => {
-    const destination = new Date("July 1,2023").getTime();
+    const destination = new Date("December 1,2023").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = destination - now;

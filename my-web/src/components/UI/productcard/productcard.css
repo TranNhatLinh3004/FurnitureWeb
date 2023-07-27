@@ -15,6 +15,18 @@
   height: 250px;
 }
 
+.product__img span {
+  background: rgb(0, 215, 100);
+  padding: 3px 5px;
+  position: absolute;
+  top: 10px;
+  color: #fff;
+  font-weight: 600;
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .product__name {
   font-size: 1.2rem;
   color: var(--primary-color);
@@ -46,6 +58,12 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 15px 0 5px;
+}
+
+.product__card-bottom strike {
+  font-size: 18px;
+  color: gray;
+  margin-left: 4px;
 }
 
 .product__card-bottom span i {

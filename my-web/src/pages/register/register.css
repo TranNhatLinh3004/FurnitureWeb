@@ -5,9 +5,13 @@ section {
 }
 
 .auth__form {
-  background: var(--primary-color);
+  background-image: url("https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   padding: 40px;
   border-radius: 5px;
+}
+
+.auth__form h3 {
+  color: var(--primary-color);
 }
 
 .auth__btn {

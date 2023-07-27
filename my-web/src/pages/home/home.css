@@ -4,6 +4,43 @@
   /* Đổi màu sang màu xanh lá cây */
 }
 
+.hero__content.hidden,
+.hero__image.hidden {
+  column-gap: 2rem;
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+  transform: translateY(10%);
+}
+
+.hero__content.show,
+.hero__image.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.hero__image {
+  position: relative;
+  margin-left: 80px;
+}
+
+.hero__image img {
+  animation: 5s animation ease-in-out infinite 1s;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .hero__content {
   margin-top: 50px;
 }
@@ -66,10 +103,16 @@
 }
 
 .section__title {
+  /* text-align: center; */
+  /* width: 400px; */
   position: relative;
   top: -230px;
-  color: #0f5c36;
-  text-shadow: 2px 2px 5px #159245, 3px 4px 5px #159245;
+  color: white;
+  font-weight: 700;
+  /* text-shadow: 2px 2px 5px #159245, 3px 4px 5px #159245; */
+  text-shadow: 1px 1px 5px #07c954, 3px 4px 5px #159245;
+  -webkit-text-stroke: 1px #111;
+  text-transform: uppercase;
 }
 
 .best__sales {

@@ -8,16 +8,18 @@ import Checkout from "../pages/checkout/Checkout";
 import Register from "../pages/register/Register";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import ProtectRoute from "./ProtectRoute";
+import ThankYou from "../pages/thank-you/ThankYou";
 
 function Routers(props) {
   return (
     <Routes>
-      <Route path="" element={<Home />} />
+      <Route exact path="" element={<Home />} />
       <Route path="home" element={<Home />} />
       <Route path="login" element={<Login />} />{" "}
       <Route path="shop" element={<Shop />} />{" "}
       <Route path="shop/:id" element={<ProductDetails />} />{" "}
       <Route path="cart" element={<Cart />} />{" "}
+      <Route path="thank-you" element={<ThankYou />} />{" "}
       <Route
         path="checkout"
         element={

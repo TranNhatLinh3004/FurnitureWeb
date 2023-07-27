@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cart.css";
 import CommonSection from "../../components/UI/commonsection/CommonSection";
 import Helmet from "../../components/helmet/Helmet";
@@ -10,6 +10,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Cart(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const cartItems = useSelector((state) => state.cart.cartItem);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
@@ -56,7 +59,7 @@ function Cart(props) {
                 >
                   Subtotal
                 </h3>
-                <span>${totalAmount}</span>
+                <span className="cart__total">${totalAmount}</span>
               </div>
               <p>shipping will calculate in checkout</p>
               <Row>
