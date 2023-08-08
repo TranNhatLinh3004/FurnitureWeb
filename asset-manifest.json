@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/FurnitureWeb/static/css/main.a7572570.css",
-    "main.js": "/FurnitureWeb/static/js/main.3ed067b7.js",
+    "main.js": "/FurnitureWeb/static/js/main.2e3dd507.js",
     "static/css/385.5206e6e3.chunk.css": "/FurnitureWeb/static/css/385.5206e6e3.chunk.css",
     "static/js/385.db6012e9.chunk.js": "/FurnitureWeb/static/js/385.db6012e9.chunk.js",
     "static/media/productImg11.jpg": "/FurnitureWeb/static/media/productImg11.e41e8def16fe4bf8298c.jpg",
@@ -27,12 +27,12 @@
     "static/media/counter-timer-img.png": "/FurnitureWeb/static/media/counter-timer-img.11ac8dfe1f6734c62d2f.png",
     "index.html": "/FurnitureWeb/index.html",
     "main.a7572570.css.map": "/FurnitureWeb/static/css/main.a7572570.css.map",
-    "main.3ed067b7.js.map": "/FurnitureWeb/static/js/main.3ed067b7.js.map",
+    "main.2e3dd507.js.map": "/FurnitureWeb/static/js/main.2e3dd507.js.map",
     "385.5206e6e3.chunk.css.map": "/FurnitureWeb/static/css/385.5206e6e3.chunk.css.map",
     "385.db6012e9.chunk.js.map": "/FurnitureWeb/static/js/385.db6012e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a7572570.css",
-    "static/js/main.3ed067b7.js"
+    "static/js/main.2e3dd507.js"
   ]
 }
