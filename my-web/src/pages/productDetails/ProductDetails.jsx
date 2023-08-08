@@ -36,8 +36,15 @@ function ProductDetails(props) {
     category,
     src,
   } = product;
+
   const relatedProducts = products.filter((item) => item.category === category);
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    {
+      setQuantity(1);
+    }
+  }, [product]);
 
   const handleQuantityChange = (event) => {
     const value = parseInt(event.target.value, 10);

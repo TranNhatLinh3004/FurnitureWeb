@@ -35,6 +35,12 @@ function Login(props) {
       navigate("/checkout");
     } catch (error) {
       setLoading(false);
+
+      if (error.code === "auth/user-not-found") {
+        toast.error(
+          "Email does not exist or incorrect password.Please try again."
+        );
+      }
     }
   };
 

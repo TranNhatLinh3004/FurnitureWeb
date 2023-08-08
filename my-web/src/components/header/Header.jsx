@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./header.css";
 import { Container, Row } from "reactstrap";
-import logo from "../../assets/images/eco-logo.png";
+// import logo from "../../assets/images/eco-logo.png";
 import { motion } from "framer-motion";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -26,22 +26,26 @@ const nav__links = [
   },
 ];
 function Header(props) {
-  const headerRef = useRef(null);
+  // const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-  const menuRef = useRef(null);
+  // const menuRef = useRef(null);
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const profileActionRef = useRef("show__profileActions");
-  const menuToggle = () => {
-    menuRef.current.classList.toggle("active__menu");
-  };
+  // const menuToggle = () => {
+  //   menuRef.current.classList.toggle("active__menu");
+  // };
+
+  useEffect(() => {
+    localStorage.setItem("totalQuantity", JSON.stringify(totalQuantity));
+  }, [totalQuantity]);
 
   const navigateToCart = () => {
     navigate("/cart");
   };
-  const navigateToLogin = () => {
-    navigate("/login");
-  };
+  // const navigateToLogin = () => {
+  //   navigate("/login");
+  // };
   const logout = () => {
     signOut(auth)
       .then(() => {
@@ -59,7 +63,8 @@ function Header(props) {
         <Row>
           <div className="nav__wrapper">
             <div className="logo">
-              <img src={logo} alt="" />
+              {/* <img src={logo} alt="" /> */}
+              <i class="uil uil-adobe"></i>
               <div className="">
                 <h1>Perfect Home</h1>
                 {/* <p>Since 1989</p> */}

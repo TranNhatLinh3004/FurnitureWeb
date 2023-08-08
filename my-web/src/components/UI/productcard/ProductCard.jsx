@@ -37,7 +37,7 @@ function ProductCard(props) {
         quantity: 1,
       })
     );
-    toast.success("Item added to cart");
+      toast.success("Item added to cart");
   };
   return (
     <Col lg="3" md="4" className="mb-2">

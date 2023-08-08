@@ -13,17 +13,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* background-color: rebeccapurple; */
+  padding-right: 90px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   column-gap: 8px;
+  /* background-color: red; */
 }
 
 .logo img {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.logo i {
+  color: rgb(0, 200, 133);
+  font-size: 30px;
 }
 
 .logo h1 {
@@ -37,6 +45,7 @@
   align-items: center;
   column-gap: 2.7rem;
   margin-bottom: 0;
+  /* background-color: aqua; */
 }
 
 .nav__item a {
@@ -52,6 +61,7 @@
   align-items: center;
   justify-content: center;
   column-gap: 1.2rem;
+  /* background-color: blue; */
 }
 
 .fav__icon,

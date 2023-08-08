@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./cart.css";
 import CommonSection from "../../components/UI/commonsection/CommonSection";
 import Helmet from "../../components/helmet/Helmet";
@@ -13,9 +13,24 @@ function Cart(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const cartItems = useSelector((state) => state.cart.cartItem);
-  const totalAmount = useSelector((state) => state.cart.totalAmount);
 
+  const cartItems = useSelector((state) => state.cart.cartItem);
+
+  const [totalAmount, setTotalAmount] = useState();
+
+  // const totalAmount = useSelector((state) => state.cart.totalAmount);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    setTotalAmount(
+      cartItems.reduce(
+        (acc, curr) => acc + Number(curr.price) * curr.quantity,
+        0
+      )
+    );
+  }, [cartItems]);
   /**
    * 
    * Redux Toolkit, một thư viện quản lý trạng thái phổ biến cho ứng dụng React.
