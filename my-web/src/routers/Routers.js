@@ -1,9 +1,8 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Cart from "../pages/cart/Cart";
 import Login from "../pages/login/Login";
-// import Shop from "../pages/shop/Shop";
 import Checkout from "../pages/checkout/Checkout";
 import Register from "../pages/register/Register";
 import ProductDetails from "../pages/productDetails/ProductDetails";
@@ -12,11 +11,17 @@ import ThankYou from "../pages/thank-you/ThankYou";
 const LazyShop = React.lazy(() => import("../pages/shop/Shop"));
 
 function Routers(props) {
+  const navigate = useNavigate();
+
+  // Sử dụng useEffect để thực hiện chuyển hướng đến trang home khi trang được tải lần đầu
+  useEffect(() => {
+    navigate("/home");
+  }, []);
+
   return (
     <Routes>
-      <Route exact path="" element={<Home />} />
       <Route path="home" element={<Home />} />
-      <Route path="login" element={<Login />} />{" "}
+      <Route path="login" element={<Login />} />
       <Route
         path="shop"
         element={
@@ -24,11 +29,10 @@ function Routers(props) {
             <LazyShop />
           </React.Suspense>
         }
-      />{" "}
-      {/* <Route path="shop" element={<Shop />} />{" "} */}
-      <Route path="shop/:id" element={<ProductDetails />} />{" "}
-      <Route path="cart" element={<Cart />} />{" "}
-      <Route path="thank-you" element={<ThankYou />} />{" "}
+      />
+      <Route path="shop/:id" element={<ProductDetails />} />
+      <Route path="cart" element={<Cart />} />
+      <Route path="thank-you" element={<ThankYou />} />
       <Route
         path="checkout"
         element={
@@ -36,8 +40,8 @@ function Routers(props) {
             <Checkout />
           </ProtectRoute>
         }
-      />{" "}
-      <Route path="register" element={<Register />} />{" "}
+      />
+      <Route path="register" element={<Register />} />
     </Routes>
   );
 }
