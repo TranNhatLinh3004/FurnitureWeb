@@ -1,19 +1,26 @@
 {
   "files": {
-    "main.css": "/FurnitureWeb/static/css/main.1a92ee95.css",
-    "main.js": "/FurnitureWeb/static/js/main.444649bd.js",
+    "main.css": "/FurnitureWeb/static/css/main.aed097db.css",
+    "main.js": "/FurnitureWeb/static/js/main.44c85ed1.js",
     "static/css/385.5206e6e3.chunk.css": "/FurnitureWeb/static/css/385.5206e6e3.chunk.css",
     "static/js/385.db6012e9.chunk.js": "/FurnitureWeb/static/js/385.db6012e9.chunk.js",
+    "static/media/galleryImg03.jpg": "/FurnitureWeb/static/media/galleryImg03.7d8be3a1670359f7f918.jpg",
     "static/media/productImg11.jpg": "/FurnitureWeb/static/media/productImg11.e41e8def16fe4bf8298c.jpg",
     "static/media/single-sofa-01.jpg": "/FurnitureWeb/static/media/single-sofa-01.db24b9feed7582c4e98d.jpg",
+    "static/media/galleryImg07.jpg": "/FurnitureWeb/static/media/galleryImg07.7093311abdd60b4ec3c8.jpg",
     "static/media/arm-chair-03.jpg": "/FurnitureWeb/static/media/arm-chair-03.3249f382638c86196acd.jpg",
     "static/media/productImg14.jpg": "/FurnitureWeb/static/media/productImg14.070978a4ecae9d793870.jpg",
     "static/media/single-sofa-03.jpg": "/FurnitureWeb/static/media/single-sofa-03.0d976c067034347df78d.jpg",
+    "static/media/galleryImg02.jpg": "/FurnitureWeb/static/media/galleryImg02.ceac14e2229421bd1e6b.jpg",
     "static/media/arm-chair-01.jpg": "/FurnitureWeb/static/media/arm-chair-01.ec17d40c57ba24fe8783.jpg",
     "static/media/single-sofa-02.jpg": "/FurnitureWeb/static/media/single-sofa-02.c27d595e87065035a135.jpg",
     "static/media/arm-chair-02.jpg": "/FurnitureWeb/static/media/arm-chair-02.fb2852acd360d23eeb04.jpg",
+    "static/media/galleryImg06.jpg": "/FurnitureWeb/static/media/galleryImg06.b0f3a8f4a74898c9e078.jpg",
     "static/media/remixicon.svg?t=1681573354175": "/FurnitureWeb/static/media/remixicon.7b85b7f8453487681fc4.svg",
+    "static/media/galleryImg04.jpg": "/FurnitureWeb/static/media/galleryImg04.165e46edf0531cc560b7.jpg",
+    "static/media/galleryImg01.jpg": "/FurnitureWeb/static/media/galleryImg01.bacb3351368cb8f540e0.jpg",
     "static/media/productImg12.jpg": "/FurnitureWeb/static/media/productImg12.ed407122b9259e04af8a.jpg",
+    "static/media/galleryImg05.jpg": "/FurnitureWeb/static/media/galleryImg05.77bd6ffe3bef2e7472df.jpg",
     "static/media/productImg13.jpg": "/FurnitureWeb/static/media/productImg13.4abac436cc2fac9c0a52.jpg",
     "static/media/remixicon.eot?t=1681573354175": "/FurnitureWeb/static/media/remixicon.ae7015155af44fd22375.eot",
     "static/media/remixicon.ttf?t=1681573354175": "/FurnitureWeb/static/media/remixicon.8df75b42f93ef0e1f8aa.ttf",
@@ -26,13 +33,13 @@
     "static/media/remixicon.woff2?t=1681573354175": "/FurnitureWeb/static/media/remixicon.52f02e1386dd3597bc00.woff2",
     "static/media/counter-timer-img.png": "/FurnitureWeb/static/media/counter-timer-img.11ac8dfe1f6734c62d2f.png",
     "index.html": "/FurnitureWeb/index.html",
-    "main.1a92ee95.css.map": "/FurnitureWeb/static/css/main.1a92ee95.css.map",
-    "main.444649bd.js.map": "/FurnitureWeb/static/js/main.444649bd.js.map",
+    "main.aed097db.css.map": "/FurnitureWeb/static/css/main.aed097db.css.map",
+    "main.44c85ed1.js.map": "/FurnitureWeb/static/js/main.44c85ed1.js.map",
     "385.5206e6e3.chunk.css.map": "/FurnitureWeb/static/css/385.5206e6e3.chunk.css.map",
     "385.db6012e9.chunk.js.map": "/FurnitureWeb/static/js/385.db6012e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a92ee95.css",
-    "static/js/main.444649bd.js"
+    "static/css/main.aed097db.css",
+    "static/js/main.44c85ed1.js"
   ]
 }
